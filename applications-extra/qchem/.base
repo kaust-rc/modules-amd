@@ -1,0 +1,18 @@
+#%Module 1.0 -*- tcl -*-
+
+source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl 
+GeneralAppSetup
+
+# Specific setup goes here, license files, path setup, etc
+setenv QC           $app_dir
+setenv QCPLATFORM   LINUX_Ix86_64
+setenv QCSCRATCH    /scratch/qchem
+setenv QCLOCALSCR   /scratch/$::env(USER)
+setenv QCMPI        mpich
+setenv QCAUX        $app_dir/qcaux
+setenv QCRSH        /usr/bin/ssh
+setenv RUNCPP       [exec which cpp]
+setenv QCPROG       $app_dir/exe/qcprog.exe
+setenv QCPROG_S     $app_dir/exe/qcprog.exe_s
+prepend-path PATH   $app_dir/bin
+prepend-path PATH   $app_dir/exe

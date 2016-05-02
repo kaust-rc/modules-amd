@@ -1,0 +1,1 @@
+FAN (File Array Notation) is package for extracting and manipulating array data from netCDF files. The package includes the three utilities nc2text, text2nc, and ncrob for printing selected data from netCDF arrays, copying ASCII data into netCDF arrays, and performing various operations (sum, mean, max, min, product, ...) on netCDF arrays.

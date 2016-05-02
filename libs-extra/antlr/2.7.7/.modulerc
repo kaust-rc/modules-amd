@@ -1,0 +1,2 @@
+#%Module 1.0 -*- tcl -*-
+module-version antlr/2.7.7/gcc-4.9.1 default

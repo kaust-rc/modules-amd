@@ -1,0 +1,17 @@
+#%Module 1.0 -*- tcl -*-
+
+source [file dirname $::ModulesCurrentModulefile]/../../../common/setup.tcl
+GeneralAppSetup
+if ![is-loaded openmpi/1.8.3/gcc-4.9.1] {
+    module add openmpi/1.8.3/gcc-4.9.1
+}
+prereq openmpi/1.8.3/gcc-4.9.1
+prepend-path PATH $app_dir
+set soext  "so"
+prepend-path  PATH               $app_dir/bin
+prepend-path  CPATH              $app_dir/include/
+prepend-path  INCLUDE            $app_dir/include/
+prepend-path  LIBRARY_PATH       $app_dir/lib/
+prepend-path  LD_LIBRARY_PATH    $app_dir/lib/
+prepend-path  DYLD_LIBRARY_PATH  $app_dir/lib/
+setenv        PLUMED_KERNEL      $app_dir/lib/libplumedKernel.$soext

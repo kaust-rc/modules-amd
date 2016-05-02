@@ -1,0 +1,18 @@
+#%Module 1.0 -*- tcl -*-
+
+source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
+GeneralCompilerSetup 
+
+set pgihome $app_dir
+set pgidir $pgihome/linux86-64/$version
+setenv PGI $pgihome
+setenv CC $pgidir/bin/pgcc
+setenv FC $pgidir/bin/pgfortran
+setenv F90 $pgidir/bin/pgf90
+setenv F77 $pgidir/bin/pgf77
+setenv CPP $pgidir/bin/pgprepro
+setenv CXX $pgidir/bin/pgcpp
+prepend-path PATH $pgidir/bin
+prepend-path MANPATH $pgidir/man
+prepend-path LD_LIBRARY_PATH $pgidir/lib:$pgidir/libso:$pgihome/share_objects/lib64
+prepend-path LM_LICENSE_FILE [file dirname $app_dir]/common/license.dat

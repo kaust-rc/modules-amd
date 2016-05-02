@@ -1,0 +1,10 @@
+#%Module 1.0 -*- tcl -*-
+
+source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
+GeneralAppSetup
+
+
+
+prepend-path PATH /opt/share/trnascan-se/1.3.1/bin
+prepend-path PERL5LIB /opt/share/trnascan-se/1.3.1/bin
+prepend-path MANPATH /opt/share/trnascan-se/1.3.1/man

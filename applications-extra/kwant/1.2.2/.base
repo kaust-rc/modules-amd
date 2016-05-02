@@ -1,0 +1,28 @@
+#%Module 1.0 -*- tcl -*-
+
+source [file dirname $::ModulesCurrentModulefile]/../../../common/setup.tcl
+GeneralAppSetup
+
+# Load compiler based on module build
+# Find last dash in the string
+set ::last_dash_index [expr [string last - $module_build] - 1]
+# Get substring containing first two dashes
+set ::substring [string range $module_build 0 $last_dash_index]
+set ::middle_dash_index [expr [string last - $substring] - 1]
+# Extract MPI library/compiler from module build
+set ::mpi [string range $module_build 0 $middle_dash_index]
+# Extract compiler from module build. We have to readd offsets we took off before
+set ::compiler [string range $module_build [expr $middle_dash_index + 2] end]
+set ::module_to_load [string map {- /} $mpi]/$compiler
+if ![is-loaded $module_to_load] {
+    module load $module_to_load
+}
+
+#Preq Modules
+module load compilers-extra
+module load openmpi/1.8.3/intel-2015
+
+prepend-path PATH 		$app_dir/bin
+prepend-path LD_LIBRARY_PATH    $app_dir/lib
+prepend-path MANPATH            $app_dir/share/man
+prepend-path PYTHONPATH         $app_dir/lib/python3.4/site-packages

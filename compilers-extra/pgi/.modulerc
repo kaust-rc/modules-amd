@@ -1,0 +1,2 @@
+#%Module 1.0 -*- tcl -*-
+module-version pgi/14.4 default

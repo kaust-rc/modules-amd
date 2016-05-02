@@ -1,0 +1,9 @@
+#%Module 1.0 -*- tcl -*-
+
+source [file dirname $::ModulesCurrentModulefile]/../../../common/setup.tcl 
+
+GeneralAppSetup 
+
+setenv VASP_ROOT /opt/share/vasp/5.4.1/openmpi-1.8.3-intel-2015-vdw
+module load openmpi/1.8.3/intel-2015
+prepend-path PATH /opt/share/vasp/5.4.1/openmpi-1.8.3-intel-2015-vdw/bin

@@ -1,0 +1,16 @@
+#%Module 1.0 -*- tcl -*-
+
+source [file dirname $::ModulesCurrentModulefile]/../../../common/setup.tcl
+GeneralAppSetup
+if ![is-loaded openmpi/1.8.3/gcc-4.7.4] {
+    if ![is-loaded compilers-extra] {
+        module add compilers-extra
+    }
+    module add openmpi/1.8.3/gcc-4.7.4
+}
+prereq openmpi/1.8.3/gcc-4.7.4
+if ![is-loaded acml/6.0.6] {
+     module add acml/6.0.6
+}
+prereq acml/6.0.6
+prepend-path PATH $app_dir

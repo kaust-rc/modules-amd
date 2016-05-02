@@ -1,0 +1,3 @@
+#%Module 1.0 -*- tcl -*-
+module-version hmmer/3.1b2 default
+

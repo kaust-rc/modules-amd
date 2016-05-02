@@ -1,0 +1,15 @@
+#%Module 1.0 -*- tcl -*-
+
+source [file dirname $::ModulesCurrentModulefile]/../../../common/setup.tcl 
+GeneralAppSetup
+
+if ![is-loaded openmpi/1.8.3/intel-2015] {
+    module load openmpi/1.8.3/intel-2015
+}
+prereq openmpi/1.8.3/intel-2015
+
+prepend-path    PATH $app_dir/build
+prepend-path    PATH $app_dir/bin
+setenv          MOLCAS $app_dir
+setenv          MOLCAS_CPUS 32
+setenv          MOLCAS_WORKDIR /scratch/$::env(USER)/molcas-tmp

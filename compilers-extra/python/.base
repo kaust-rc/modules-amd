@@ -1,0 +1,17 @@
+#%Module 1.0 -*- tcl -*-
+#
+#  Module for perl use with 'environment-modules' package:
+# 
+source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
+GeneralCompilerSetup
+
+# Load pre-reqs
+if ![is-loaded intel/2015] {
+    module add intel/2015
+}
+prereq intel/2015
+
+# Specific setup goes here, license files, path setup, etc
+prepend-path PATH $app_dir/bin
+prepend-path LD_LIBRARY_PATH $app_dir/lib
+prepend-path MANPATH $app_dir/share/man

@@ -1,0 +1,17 @@
+#%Module 1.0 -*- tcl -*-
+
+#  Module for use with 'environment-modules' package:
+source [file dirname $::ModulesCurrentModulefile]/../../../common/setup.tcl
+GeneralAppSetup 
+
+# Load compiler based on mdoule build
+set ::module_to_load [string map {- /} $::module_build]
+if ![is-loaded $module_to_load] {
+    module add $module_to_load
+}
+prereq $module_to_load
+
+# Specific setup goes here, license files, path setup, etc
+prepend-path  PATH 	$app_dir
+prepend-path  PATH      $app_dir/bin
+prepend-path MANPATH $app_dir/docs

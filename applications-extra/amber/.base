@@ -1,0 +1,11 @@
+#%Module 1.0 -*- tcl -*-
+
+source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
+GeneralAppSetup
+
+AddDeps "python/2.7.8"
+
+setenv AMBERHOME $app_dir
+prepend-path PATH $app_dir/bin
+prepend-path PYTHONPATH $app_dir/lib/python2.7/site-packages
+prepend-path LD_LIBRARY_PATH $app_dir/lib

@@ -1,0 +1,24 @@
+#%Module 1.0 -*- tcl -*-
+
+source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl 
+GeneralCompilerSetup
+
+if ![is-loaded gcc/4.9.1] {
+    module load gcc/4.9.1
+}
+prereq gcc/4.9.1
+
+if ![is-loaded java/8/u25] {
+    module load java/8/u25
+}
+prereq java/8/u25
+
+if ![is-loaded acml/6.0.6] {
+    module load acml/6.0.6
+}
+prereq acml/6.0.6
+
+prepend-path PATH $app_dir/bin
+prepend-path LD_LIBRARY_PATH $app_dir/lib64:$app_dir/lib64/R/lib
+prepend-path MANPATH $app_dir/share/man
+prepend-path R_LIBS $::env(HOME)/local/R_libs

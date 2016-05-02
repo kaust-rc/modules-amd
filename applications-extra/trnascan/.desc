@@ -1,0 +1,1 @@
+tRNA detection in genome sequences, detects ~99% of eukaryotic nuclear or prokaryotic tRNA genes, with a false positive rate of less than one per 15 gigabases, and with a search speed of about 30 kb/second.

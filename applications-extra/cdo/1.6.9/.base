@@ -1,0 +1,21 @@
+#%Module 1.0 -*- tcl -*-
+
+source [file dirname $::ModulesCurrentModulefile]/../../../common/setup.tcl
+GeneralAppSetup
+
+if ![is-loaded hdf5/1.8.15/openmpi-1.8.3-gcc-4.9.1] {
+    module add hdf5/1.8.15/openmpi-1.8.3-gcc-4.9.1
+}
+prereq hdf5/1.8.15/openmpi-1.8.3-gcc-4.9.1
+
+if ![is-loaded netcdf/4.3.2/openmpi-1.8.3-gcc-4.9.1] {
+    module add netcdf/4.3.2/openmpi-1.8.3-gcc-4.9.1
+}
+prereq netcdf/4.3.2/openmpi-1.8.3-gcc-4.9.1
+
+if ![is-loaded zlib/1.2.8/gcc-4.9.1] {
+    module add zlib/1.2.8/gcc-4.9.1
+}
+prereq zlib/1.2.8/gcc-4.9.1
+
+prepend-path PATH $app_dir/bin

@@ -1,0 +1,26 @@
+#%Module 1.0 -*- tcl -*-
+
+#  Module for use with 'environment-modules' package:
+source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
+GeneralAppSetup
+
+set VERSION 2015.3.187
+set INTEL_ROOT /opt/share/intel/2015
+set MKL_ARCH intel64
+
+prepend-path CPATH $INTEL_ROOT/composer_xe_$VERSION/mkl/include/
+
+#prepend-path LD_LIBRARY_PATH $INTEL_ROOT/composer_xe_$VERSION/compiler/lib/$MKL_ARCH
+prepend-path LD_LIBRARY_PATH $INTEL_ROOT/composer_xe_$VERSION/mkl/lib/$MKL_ARCH
+
+#prepend-path LIBRARY_PATH $INTEL_ROOT/composer_xe_$VERSION/compiler/lib/$MKL_ARCH
+prepend-path LIBRARY_PATH $INTEL_ROOT/composer_xe_$VERSION/mkl/lib/$MKL_ARCH
+
+prepend-path MANPATH $INTEL_ROOT/composer_xe_$VERSION/man/en_US
+
+#setenv MIC_LD_LIBRARY_PATH $INTEL_ROOT/composer_xe_$VERSION/compiler/lib/mic
+#prepend-path MIC_LD_LIBRARY_PATH $INTEL_ROOT/composer_xe_$VERSION/compiler/lib/mic
+
+setenv MKLROOT $INTEL_ROOT/composer_xe_$VERSION/mkl
+
+setenv NLSPATH $INTEL_ROOT/composer_xe_$VERSION/mkl/lib/$MKL_ARCH/locale/en_US

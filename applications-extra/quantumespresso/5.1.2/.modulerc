@@ -1,0 +1,3 @@
+#%Module 1.0 -*- tcl -*-
+
+module-version quantumespresso/5.1.2/openmpi-1.8.3-intel-2015 default

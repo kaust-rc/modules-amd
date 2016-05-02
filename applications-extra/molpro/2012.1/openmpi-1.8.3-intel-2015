@@ -1,0 +1,8 @@
+#%Module 1.0 -*- tcl -*-
+
+source [file dirname $::ModulesCurrentModulefile]/../../../common/setup.tcl 
+GeneralAppSetup
+
+AddDeps "openmpi/1.8.3/intel-2015"
+prepend-path PATH $app_dir/molprop_2012_1_Linux_x86_64_i8/bin
+setenv TMPDIR /scratch/$::env(USER)

@@ -1,0 +1,23 @@
+#%Module 1.0 -*- tcl -*-
+#
+#  Module for use with 'environment-modules' package:
+# 
+source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
+GeneralAppSetup
+
+# Additional conflicts
+# conflict name
+
+# Prereqs
+# prereq name
+
+if ![is-loaded gcc/4.9.1] {
+    module load gcc/4.9.1
+}
+
+
+# Specific setup goes here, license files, path setup, etc
+
+prepend-path    PATH            $app_dir/bin
+prepend-path    LD_LIBRARY_PATH $app_dir/lib
+prepend-path    CPATH $app_dir/include

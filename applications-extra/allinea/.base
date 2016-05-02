@@ -1,0 +1,8 @@
+#%Module 1.0 -*- tcl -*-
+
+source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
+GeneralAppSetup ${version} ALLINEA_ROOT
+
+# Additional conflicts.
+
+prepend-path PATH $app_dir/bin

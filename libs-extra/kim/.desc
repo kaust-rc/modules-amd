@@ -1,0 +1,1 @@
+The KIM API is an Application Programming Interface for atomistic simulations. The API provides a standard for exchanging information between atomistic simulation codes (molecular dynamics, molecular statics, lattice dynamics, Monte Carlo, etc.) and interatomic models (potentials or force fields)

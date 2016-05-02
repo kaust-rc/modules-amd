@@ -1,0 +1,24 @@
+#%Module 1.0 -*- tcl -*-
+#
+#  Module for use with 'environment-modules' package:
+source [file dirname $::ModulesCurrentModulefile]/../../../common/setup.tcl
+GeneralAppSetup
+
+# Load compiler based on mdoule build
+if ![is-loaded	netcdf/4.3.2/openmpi-1.8.3-gcc-4.9.1] {
+    module add netcdf/4.3.2/openmpi-1.8.3-gcc-4.9.1
+        }
+if ![is-loaded gsl/1.9] {
+    module add gsl/1.9
+}
+if ![is-loaded antlr/2.7.7] {
+    module add antlr/2.7.7
+}
+prereq antlr/2.7.7
+prereq gsl/1.9
+prereq netcdf/4.3.2/openmpi-1.8.3-gcc-4.9.1
+prepend-path PATH $app_dir/bin
+prepend-path LD_LIBRARY_PATH $app_dir/lib
+prepend-path CPATH $app_dir/include
+prepend-path MANPATH $app_dir/share/man
+prepend-path INFOPATH $app_dir/share/info

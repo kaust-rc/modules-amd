@@ -1,0 +1,28 @@
+#%Module 1.0 -*- tcl -*-
+
+source [file dirname $::ModulesCurrentModulefile]/../../../common/setup.tcl
+GeneralAppSetup
+if ![is-loaded gcc/4.9.1] {
+    module add gcc/4.9.1
+}
+prereq gcc/4.9.1
+
+if ![is-loaded libs-extra] {
+    module add libs-extra
+}
+prereq libs-extra
+
+if ![is-loaded plumed/2.1.3/openmpi-1.8.3-gcc-4.9.1] {
+    module add plumed/2.1.3/openmpi-1.8.3-gcc-4.9.1
+}
+prereq plumed/2.1.3/openmpi-1.8.3-gcc-4.9.1
+
+prepend-path MANPATH $app_dir/share/man
+prepend-path GMXMAN $app_dir/share/man
+#prepend-path LD_LIBRARY_PATH $app_dir/lib64
+prepend-path GMXDATA $app_dir/share/gromacs
+prepend-path PATH $app_dir/bin
+prepend-path GMXBIN $app_dir/bin
+#prepend-path GMXLDLIB $app_dir/lib64
+prepend-path PKG_CONFIG_PATH $app_dir/lib64/pkgconfig 
+prepend-path CPATH $app_dir/include 
