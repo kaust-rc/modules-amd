@@ -1,6 +1,6 @@
 #%Module 1.0 -*- tcl -*-                                                                                                                              
 
-source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 # We have to use a different name than INTEL_ROOT otherwise we interfere with Intel's binaries                                                        
 # This module file has been generated withe env2
 # perl ~/bin/env2  -from bash -to modulecmd "/opt/share/intel/2016/bin/compilervars.sh -arch intel64 -platform linux" > try-module

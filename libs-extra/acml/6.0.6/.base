@@ -1,6 +1,6 @@
 #%Module 1.0 -*- tcl -*-
 
-source [file dirname $::ModulesCurrentModulefile]/../../../common/setup.tcl
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup $version/$module_build
 
 prepend-path LD_LIBRARY_PATH $app_dir/${module_build}64_mp/lib

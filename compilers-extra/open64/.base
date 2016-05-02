@@ -1,7 +1,7 @@
 #%Module 1.0 -*- tcl -*-
 
 # Let's source the common file that sets up our environment.
-source [file dirname $::ModulesCurrentModulefile]/../../common/setup.tcl
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 
 # Now let's setup the common compiler stuff.
 GeneralCompilerSetup 
