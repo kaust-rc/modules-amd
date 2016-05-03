@@ -1,24 +1,18 @@
 #%Module 1.0 -*- tcl -*-
+
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
-GeneralAppSetup ${version}/$distro/$m_arch 
+GeneralAppSetup ${version}/$distro/$m_arch
 
-set VERSION ${version}
-set NAME CUDA
-set CUDA_PATH /opt/share/cuda/${version}/el6/x86_64
-set ROOTDIR /opt/share/cuda/${version}/el6/x86_64
-setenv  CUDA_INSTALL_PATH $ROOTDIR
-setenv  CUDADIR /opt/share/cuda/${version}/el6/x86_64
+setenv  CUDA_INSTALL_PATH $app_dir
+setenv  CUDADIR $app_dir
 
-prepend-path  PATH $ROOTDIR/bin
-prepend-path  LD_LIBRARY_PATH $ROOTDIR/lib64
-prepend-path  LD_LIBRARY_PATH $ROOTDIR/lib
-prepend-path  LD_LIBRARY_PATH /opt/share/cuda/6.5/el6/x86_64/samples/common/inc/
-prepend-path  INCDIR $ROOTDIR/include
-prepend-path  INCLUDE $ROOTDIR/include 
-prepend-path  INCLUDE /opt/share/cuda/6.5/el6/x86_64/samples/common/inc/
-prepend-path  LIBDIR $ROOTDIR/lib64
-prepend-path  LIBDIR $ROOTDIR/lib
-prepend-path  PATH   $ROOTDIR/samples/bin/x86_64/linux/release
-
-
-
+prepend-path  PATH $app_dir/bin
+prepend-path  LD_LIBRARY_PATH $app_dir/lib64
+prepend-path  LD_LIBRARY_PATH $app_dir/lib
+prepend-path  LD_LIBRARY_PATH $app_dir/samples/common/inc/
+prepend-path  INCDIR $app_dir/include
+prepend-path  INCLUDE $app_dir/include
+prepend-path  INCLUDE $app_dir/samples/common/inc/
+prepend-path  LIBDIR $app_dir/lib64
+prepend-path  LIBDIR $app_dir/lib
+prepend-path  PATH   $app_dir/samples/bin/x86_64/linux/release
