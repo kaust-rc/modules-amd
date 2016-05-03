@@ -1,8 +1,0 @@
-#%Module 1.0 -*- tcl -*-
-
-source $env(KAUST_MODULES_ROOT)/common/setup.tcl
-GeneralAppSetup $version/$module_build
-
-prepend-path LD_LIBRARY_PATH $app_dir/${module_build}64_fma4_mp/lib
-prepend-path LIBRARY_PATH $app_dir/${module_build}64_fma4_mp/lib
-prepend-path CPATH $app_dir/${module_build}64_fma4_mp/include
