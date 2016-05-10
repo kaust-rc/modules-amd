@@ -1,0 +1,18 @@
+#%Module 1.0 -*- tcl -*-
+
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralAppSetup
+
+AddDeps "openmpi/1.8.3/intel-2015"
+
+setenv GROMACS_DIR $app_dir
+setenv GMXBIN $app_dir/bin
+setenv GMXLDLIB $app_dir/lib64
+setenv GMXMAN $app_dir/share/man
+setenv GMXDATA $app_dir/share/gromacs
+
+prepend-path LD_LIBRARY_PATH $env(GMXLDLIB)
+prepend-path PATH            $env(GMXBIN)
+prepend-path MANPATH         $env(GMXMAN)
+prepend-path CPATH           $app_dir/include
+prepend-path PKG_CONFIG_PATH $env(GMXLDLIB)/pkgconfig
