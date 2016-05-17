@@ -1,22 +1,12 @@
 #%Module 1.0 -*- tcl -*-
-#
-#  Module for use with 'environment-modules' package:
-# 
+
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup
 
-# Additional conflicts
-#conflict name
+set gr $app_dir
+set gver 09
 
-# Prereqs
-# prereq name
-
-
-# Specific setup goes here, license files, path setup, etc
-set 	gr          	$app_dir
-set 	gver        	09
-
-setenv 	g${gver}root  	$gr
+setenv g${gver}root $gr
 
 #if { [info exists env(TMPDIR)] } {
 #    setenv GAUSS_SCRDIR $env(TMPDIR)
@@ -26,30 +16,19 @@ setenv 	g${gver}root  	$gr
 setenv GAUSS_SCRDIR /scratch/$::env(USER)
 
 # Below is from g09root/g09/bsd/g09.login, converted to tcl
-set 	EXEDIR 		$gr/g${gver}/bsd:$gr/g${gver}/local:$gr/g${gver}/extras:$gr/g${gver}
-setenv 	GAUSS_EXEDIR 	$EXEDIR
-setenv 	GAUSS_LEXEDIR 	$gr/g${gver}/linda-exe
-setenv 	GAUSS_ARCHDIR 	$gr/g${gver}/arch
-setenv 	GAUSS_BSDDIR 	$gr/g${gver}/bsd
-#setenv GV_DIR $gr/gv # not required as it doesn't exist
+set EXEDIR $gr/g${gver}/bsd:$gr/g${gver}/local:$gr/g${gver}/extras:$gr/g${gver}
+setenv GAUSS_EXEDIR $EXEDIR
+setenv GAUSS_LEXEDIR $gr/g${gver}/linda-exe
+setenv GAUSS_ARCHDIR $gr/g${gver}/arch
+setenv GAUSS_BSDDIR $gr/g${gver}/bsd
 
 prepend-path PATH $EXEDIR
-
-setenv 	PERLLIB 	$gr/${gver}/bsd
-setenv 	_DSM_BARRIER 	SHM
-setenv 	_RLD_ARGS 	"-log /dev/null"
-
 prepend-path LD_LIBRARY_PATH $EXEDIR
-#append-path  LD_LIBRARY_PATH $gr/gv # not required as it doesn't exist
+prepend-path MANPATH $gr/g${gver}/bsd
 
-setenv 	G${gver}BASIS 	$gr/g${gver}/basis
-
-prepend-path MANPATH 	$gr/g${gver}/bsd
-
-set-alias sl 		"$gr/g${gver}/tests/searchlog.csh"
-#set 	mname 		"`set-mflags x`"
-#set 	mflags 		"`set-mflags`"
-#set-alias mg 		"$mname -f $gr/g${gver}/bsd/g09.make $mflags" # not required as it doesn't exist
-
-setenv 	PGI_TERM 	"trace,abort"
-
+setenv PERLLIB $gr/${gver}/bsd
+setenv _DSM_BARRIER SHM
+setenv _RLD_ARGS "-log /dev/null"
+setenv G${gver}BASIS $gr/g${gver}/basis
+setenv PGI_TERM "trace,abort"
+set-alias sl "$gr/g${gver}/tests/searchlog.csh"
