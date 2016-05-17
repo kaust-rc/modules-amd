@@ -1,15 +1,9 @@
 #%Module 1.0 -*- tcl -*-
-#
-#  Module for perl use with 'environment-modules' package:
-# 
+
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralCompilerSetup
 
-# Load pre-reqs
-if ![is-loaded intel/2015] {
-    module add intel/2015
-}
-prereq intel/2015
+AddDeps "intel/2015"
 
 # Specific setup goes here, license files, path setup, etc
 prepend-path PATH $app_dir/bin

@@ -2,10 +2,7 @@
 
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup
-if ![is-loaded intel/2015] {
-    module add intel/2015
-}
-prereq intel/2015
+AddDeps "intel/2015"
 prepend-path PATH $app_dir
 set soext  "so"
 prepend-path  PATH               $app_dir/bin

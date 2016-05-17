@@ -1,22 +1,7 @@
 #%Module 1.0 -*- tcl -*-
-#
-#  Module for use with 'environment-modules' package:
-# 
+
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup v${version}.app OPENFOAM_ROOT
-
-
-#if ![is-loaded openmpi/1.8.3/gcc-4.9.1] {
-#    module load openmpi/1.8.3/gcc-4.9.1
-#}
-
-
-# Additional conflicts
-# need to check if any conflicts exist
-# Prereqs
-# prereq name
-#prereq openmpi/1.8.3/gcc-4.9.1
-
 
 
 # Specific setup goes here, license files, path setup, etc
@@ -74,7 +59,7 @@ setenv	WM_PROJECT_DIR	$app_dir/OpenFOAM-$version
 setenv	WM_PROJECT_INST_DIR	$app_dir
 setenv	WM_PROJECT	OpenFOAM
 setenv	WM_PROJECT_USER_DIR	$env(HOME)/OpenFOAM-$version
-setenv	WM_PROJECT_VERSION	$version 	 	
+setenv	WM_PROJECT_VERSION	$version
 setenv	WM_THIRD_PARTY_DIR	$app_dir/ThirdParty-$version
 
 prepend-path	MANPATH	$app_dir/ThirdParty-$version/platforms/linux64Gcc48/openmpi-1.6.5/share/man:$app_dir/ThirdParty-$version/platforms/linux64/gcc-4.8.1/man

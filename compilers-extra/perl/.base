@@ -3,11 +3,7 @@
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralCompilerSetup
 
-# Load pre-reqs
-if ![is-loaded gcc/4.9.1] {
-    module add gcc/4.9.1
-}
-prereq gcc/4.9.1
+AddDeps "gcc/4.9.1"
 
 # Set PATH and MANPATH
 prepend-path PATH $app_dir/bin

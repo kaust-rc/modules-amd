@@ -1,6 +1,6 @@
 #%Module 1.0 -*- tcl -*-
 
-source $env(KAUST_MODULES_ROOT)/common/setup.tcl 
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup
 
 # Load compiler based on module build
@@ -14,10 +14,8 @@ set ::mpi [string range $module_build 0 $middle_dash_index]
 # Extract compiler from module build. We have to readd offsets we took off before
 set ::compiler [string range $module_build [expr $middle_dash_index + 2] end]
 set ::module_to_load [string map {- /} $mpi]/$compiler
-if ![is-loaded $module_to_load] {
-    module load $module_to_load
-}
-prereq $module_to_load
+
+AddDeps "$module_to_load"
 prepend-path PATH $app_dir/bin
 
 ## modified by nawasaas on March, 31 2015 to add the already installed YAMBO

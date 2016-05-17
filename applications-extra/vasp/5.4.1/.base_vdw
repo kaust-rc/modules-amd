@@ -1,9 +1,7 @@
 #%Module 1.0 -*- tcl -*-
 
-source $env(KAUST_MODULES_ROOT)/common/setup.tcl 
-
-GeneralAppSetup 
-
-setenv VASP_ROOT /opt/share/vasp/5.4.1/openmpi-1.8.3-intel-2015-vdw
-module load openmpi/1.8.3/intel-2015
-prepend-path PATH /opt/share/vasp/5.4.1/openmpi-1.8.3-intel-2015-vdw/bin
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralAppSetup
+setenv VASP_ROOT $app_dir
+AddDeps "openmpi/1.8.3/intel-2015"
+prepend-path PATH $app_dir/bin

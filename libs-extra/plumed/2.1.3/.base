@@ -2,10 +2,7 @@
 
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup
-if ![is-loaded openmpi/1.8.3/gcc-4.9.1] {
-    module add openmpi/1.8.3/gcc-4.9.1
-}
-prereq openmpi/1.8.3/gcc-4.9.1
+AddDeps "openmpi/1.8.3/gcc-4.9.1"
 prepend-path PATH $app_dir
 set soext  "so"
 prepend-path  PATH               $app_dir/bin

@@ -3,16 +3,6 @@
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup
 
-
-if ![is-loaded hmmer/2.3] {
-    module load hmmer/2.3
-}
-
-
-if ![is-loaded perl] {
-    module load perl
-}
-
-
+AddDeps "hmmer/2.3,perl"
 
 prepend-path PATH $app_dir

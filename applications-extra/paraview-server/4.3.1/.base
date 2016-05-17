@@ -1,6 +1,6 @@
 #%Module 1.0 -*- tcl -*-
 
-source $env(KAUST_MODULES_ROOT)/common/setup.tcl 
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 
 GeneralAppSetup
 
@@ -16,20 +16,7 @@ set ::mpi [string range $module_build 0 $middle_dash_index]
 set ::compiler [string range $module_build [expr $middle_dash_index + 2] end]
 set ::module_to_load [string map {- /} $mpi]/$compiler
 
-if ![is-loaded $module_to_load] {
-    module load $module_to_load
-}
-prereq $module_to_load
-
-if ![is-loaded compilers-extra] {
-    module load compilers-extra
-}
-prereq compilers-extra
-
-if ![is-loaded python/2.7.10/gcc-4.9.1] {
-    module load python/2.7.10/gcc-4.9.1
-}
-prereq python/2.7.10/gcc-4.9.1
+AddDeps "$module_to_load,python/2.7.10/gcc-4.9.1"
 
 prepend-path PATH $app_dir/bin
 prepend-path LD_LIBRARY_PATH $app_dir/lib

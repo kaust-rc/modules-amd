@@ -15,10 +15,8 @@ set ::mpi [string range $module_build 0 $middle_dash_index]
 # Extract compiler from module build. We have to readd offsets we took off before
 set ::compiler [string range $module_build [expr $middle_dash_index + 2] end]
 set ::module_to_load [string map {- /} $mpi]/$compiler
-if ![is-loaded $module_to_load] {
-    module load $module_to_load
-}
-prereq $module_to_load
+
+AddDeps "$module_to_load"
 
 
 # Set paths to use this library

@@ -1,15 +1,12 @@
-#%Module 1.0 -*- tcl -*-                                                                                                                              
+#%Module 1.0 -*- tcl -*-
 
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
-# We have to use a different name than INTEL_ROOT otherwise we interfere with Intel's binaries                                                        
+# We have to use a different name than INTEL_ROOT otherwise we interfere with Intel's binaries
 GeneralAppSetup ${::version} KAUST_INTEL_ROOT
 
 conflict intel
-#puts stderr "app_dir $app_dir"
 set intelhome $app_dir/compilers_and_libraries/linux
-
 set intelarch intel64
-
 
 setenv GDB_CROSS $intelhome/debugger/gdb/intel64_mic/bin/gdb-mic
 setenv INTEL_PYTHONHOME $intelhome/debugger/python/intel64/

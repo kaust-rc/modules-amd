@@ -4,4 +4,3 @@ source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup
 prepend-path PATH $app_dir/bin
 prepend-path PATH $app_dir/comsol52/multiphysics/bin
-

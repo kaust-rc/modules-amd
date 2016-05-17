@@ -1,6 +1,6 @@
 #%Module 1.0 -*- tcl -*-
 
-source $env(KAUST_MODULES_ROOT)/common/setup.tcl 
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 
 GeneralAppSetup
 
@@ -16,8 +16,7 @@ set ::mpi [string range $module_build 0 $middle_dash_index]
 set ::compiler [string range $module_build [expr $middle_dash_index + 2] end]
 set ::module_to_load [string map {- /} $mpi]/$compiler
 
-AddDeps "applications-extra, netcdf/4.3.3.1"
-
+AddDeps "netcdf/4.3.3.1"
 
 prepend-path PATH $app_dir/bin
 prepend-path LD_LIBRARY_PATH $app_dir/lib

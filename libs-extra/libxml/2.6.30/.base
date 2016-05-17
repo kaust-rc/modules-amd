@@ -6,14 +6,8 @@ GeneralAppSetup
 
 # Load compiler based on mdoule build
 set ::module_to_load [string map {- /} $::module_build]
-if ![is-loaded $module_to_load] {
-    module add $module_to_load
-    }
-    prereq $module_to_load
+AddDeps "$module_to_load"
 
-
-
-#prereq zlib/1.2.8/4.9.1
 prepend-path PATH $app_dir/bin
 prepend-path LD_LIBRARY_PATH $app_dir/lib
 prepend-path LIBRARY_PATH $app_dir/lib

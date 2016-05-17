@@ -1,11 +1,8 @@
 #%Module 1.0 -*- tcl -*-
 
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
-GeneralAppSetup 
+GeneralAppSetup
 
-if ![is-loaded openmpi/1.8.3/intel-2015] {
-    module add openmpi/1.8.3/intel-2015
-}
-prereq openmpi/1.8.3/intel-2015
+AddDeps "openmpi/1.8.3/intel-2015"
 
 prepend-path PATH $app_dir/bin

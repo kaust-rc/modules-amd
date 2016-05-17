@@ -1,6 +1,5 @@
 #%Module 1.0 -*- tcl -*-
-#
-#  GNU gcc module for use with 'environment-modules' package:
+
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup
 

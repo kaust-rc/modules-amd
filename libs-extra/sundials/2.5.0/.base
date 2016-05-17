@@ -5,15 +5,7 @@ GeneralAppSetup
 
 conflict sundials
 
-if ![is-loaded intel] {
-    module add intel/2015
-}
-prereq intel
-if ![is-loaded openmpi] {
-    module add openmpi/1.8.3/intel-2015
-}
-prereq openmpi
+AddDeps "openmpi/1.8.3/intel-2015"
 
 prepend-path PATH 		$app_dir/bin
 prepend-path LD_LIBRARY_PATH 	$app_dir/lib
-# header files in /include need to be selected by user based on what code the user wants
