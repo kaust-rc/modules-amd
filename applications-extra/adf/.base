@@ -1,11 +1,20 @@
 #%Module 1.0 -*- tcl -*-
 
-source $env(KAUST_MODULES_ROOT)/common/setup.tcl 
-GeneralAppSetup adf2014.08 ADFHOME
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralAppSetup
 
-setenv          ADFBIN        $app_dir/bin
-setenv          ADFRESOURCES  $app_dir/atomicdata
-setenv          SCMLICENSE    $app_dir/license.txt
-setenv          SCM_TMPDIR    /scratch/$env(USER)
+setenv  ADFHOME       $app_dir
+setenv  ADFBIN        $app_dir/bin
+setenv  ADFRESOURCES  $app_dir/atomicdata
+setenv  SCMLICENSE    $app_dir/license.txt
+
+# Do we have /scratch file-system?
+# This is future proof for those cases where we
+# change WS OS but don't have /scratch on it.
+if { [file isdirectory /scratch] } {
+    setenv SCM_TMPDIR /scratch/$env(USER)
+} else {
+    setenv SCM_TMPDIR /tmp
+}
 
 prepend-path    PATH          $app_dir/bin
