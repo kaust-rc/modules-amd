@@ -6,7 +6,7 @@ GeneralAppSetup
 
 # Load compiler based on mdoule build
 set ::module_to_load [string map {- /} $::module_build]
-AddDeps "$module_to_load"
+AddDeps "$module_to_load, cuda/7.5"
 
 # Specific setup goes here, license files, path setup, etc
 prepend-path PATH $app_dir/bin
