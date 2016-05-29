@@ -1,9 +1,9 @@
-# KAUST SMC module files
+# KAUST Noor2 module files
 Git would be an easy way to manage module files on KAUST clusters.
 
 ## Cloning
-* Clone this repo to your home directory either on your laptop or smc cluster
-  * `mkdir -p ~/git && cd ~/git && git clone https://gitlab.kaust.edu.sa/kaust-rc/modules-smc.git`
+* Clone this repo to your home directory either on your laptop or noor2 cluster
+  * `mkdir -p ~/git && cd ~/git && git clone https://gitlab.kaust.edu.sa/kaust-rc/modules-noor2.git`
 
 ## Modify module files
 * Create or modify any required file then do the following
@@ -40,7 +40,7 @@ tmode(){
                 KAUST_MODULES_ROOT=~/git/modules-noor2;
                 ;;
             'rcfen03' | 'rcfen04' | 'ci426' | 'ci427' )
-                KAUST_MODULES_ROOT=~/git/modules-smc;
+                KAUST_MODULES_ROOT=~/git/modules-noor2;
                 ;;
             *)
                 echo "Couldn't determine development node!"
