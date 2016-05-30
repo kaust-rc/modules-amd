@@ -1,19 +1,27 @@
 #%Module 1.0 -*- tcl -*-
 
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
-GeneralAppSetup ${version}/$distro/$m_arch
+if [expr { $version == 17.0 }] {
+    GeneralAppSetup
+} else {
+    GeneralAppSetup ${version}/$distro/$m_arch
+}
 
-setenv  CUDA_INSTALL_PATH $app_dir
-setenv  CUDADIR $app_dir
 
-prepend-path  PATH $app_dir/bin
-prepend-path  LD_LIBRARY_PATH $app_dir/lib64
-prepend-path  LD_LIBRARY_PATH $app_dir/lib
-prepend-path  LIBRARY_PATH $app_dir/lib64
-prepend-path  LIBRARY_PATH $app_dir/lib
-prepend-path  INCDIR $app_dir/include
-prepend-path  INCLUDE $app_dir/include
-prepend-path  INCLUDE $app_dir/samples/common/inc/
-prepend-path  LIBDIR $app_dir/lib64
-prepend-path  LIBDIR $app_dir/lib
-prepend-path  PATH   $app_dir/samples/bin/x86_64/linux/release
+setenv CUDA_INSTALL_PATH $app_dir
+setenv CUDADIR $app_dir
+
+prepend-path PATH $app_dir/samples/bin/x86_64/linux/release
+prepend-path PATH $app_dir/bin
+
+prepend-path LD_LIBRARY_PATH $app_dir/lib64
+prepend-path LD_LIBRARY_PATH $app_dir/lib
+prepend-path LIBRARY_PATH $app_dir/lib64
+prepend-path LIBRARY_PATH $app_dir/lib
+prepend-path LIBDIR $app_dir/lib64
+prepend-path LIBDIR $app_dir/lib
+
+prepend-path CPATH $app_dir/include
+prepend-path INCLUDE $app_dir/samples/common/inc
+prepend-path INCDIR $app_dir/include
+prepend-path INCLUDE $app_dir/include
