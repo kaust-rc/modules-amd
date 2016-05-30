@@ -1,7 +1,7 @@
 #%Module 1.0 -*- tcl -*-
 
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
-if [expr { $version == 17.0 }] {
+if [expr { $version == 7.5 }] {
     GeneralAppSetup
 } else {
     GeneralAppSetup ${version}/$distro/$m_arch
