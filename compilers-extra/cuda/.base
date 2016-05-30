@@ -1,12 +1,13 @@
 #%Module 1.0 -*- tcl -*-
 
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+
+# Load based on version because we copied old installations from Noor 1
 if [expr { $version == 7.5 }] {
     GeneralAppSetup
 } else {
     GeneralAppSetup ${version}/$distro/$m_arch
 }
-
 
 setenv CUDA_INSTALL_PATH $app_dir
 setenv CUDADIR $app_dir
