@@ -6,3 +6,9 @@ GeneralAppSetup
 AddDeps "openmpi/1.8.3/intel-2015"
 
 prepend-path PATH $app_dir/bin
+
+#The following directory available only for version 2016
+if [expr { $version == 2016 }] {
+     #Load cuda 7.5 module
+         AddDeps "cuda/7.5"
+}
