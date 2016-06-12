@@ -18,8 +18,6 @@ prepend-path PATH $intelhome/debugger/gdb/intel64_mic/bin
 prepend-path PATH $intelhome/mpi/intel64/bin
 prepend-path PATH $intelhome/bin/intel64
 
-setenv INTEL_LICENSE_FILE [file dirname $intelhome]/licenses
-
 prepend-path CPATH $intelhome/ipp/include:$intelhome/mkl/include:$intelhome/tbb/include:$intelhome/daal/include
 prepend-path LD_LIBRARY_PATH $intelhome/lib/intel64:$intelhome/mpi/intel64/lib:$intelhome/lib/intel64:$intelhome/ipp/lib/intel64:$intelhome/lib/intel64:$intelhome/mkl/lib/intel64:$intelhome/tbb/lib/intel64/gcc4.4:$intelhome/debugger/libipt/intel64/lib:$intelhome/daal/lib/intel64_lin:$intelhome/tbb/lib/intel64_lin/gcc4.4:$intelhome/lib/intel64_lin
 
@@ -53,7 +51,7 @@ prepend-path PATH $intelhome/inspector_xe/bin64
 setenv INSPECTOR_2016_DIR $intelhome/inspector_xe
 
 #license
-setenv INTEL_LICENSE_FILE [file dirname $app_dir]/licenses:$intelhome/licenses
+setenv INTEL_LICENSE_FILE [file dirname $app_dir]/licenses
 
 set bindir $intelhome/bin/$intelarch
 setenv CC $bindir/icc
