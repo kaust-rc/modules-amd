@@ -40,7 +40,7 @@ tmode(){
                 KAUST_MODULES_ROOT=~/git/modules-noor2;
                 ;;
             'rcfen03' | 'rcfen04' | 'ci426' | 'ci427' )
-                KAUST_MODULES_ROOT=~/git/modules-noor2;
+                KAUST_MODULES_ROOT=~/git/modules-smc;
                 ;;
             *)
                 echo "Couldn't determine development node!"
