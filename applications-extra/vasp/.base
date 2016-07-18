@@ -3,5 +3,4 @@
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup
 AddDepsBasedOnCompiler
-AddDeps "cuda/7.5"
 prepend-path PATH $app_dir/bin
