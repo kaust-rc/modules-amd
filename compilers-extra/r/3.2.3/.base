@@ -5,7 +5,7 @@ GeneralAppSetup
 
 # Load application based on module build
 set ::module_to_load [string map {- /} $::module_build]
-AddDeps "$module_to_load"
+AddDeps "$module_to_load, gsl/1.16/$::module_build"
 
 prepend-path PATH $app_dir/bin
 prepend-path LD_LIBRARY_PATH $app_dir/lib64
