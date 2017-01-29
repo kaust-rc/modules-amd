@@ -2,5 +2,5 @@
 
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup
-AddDepsBasedOnCompiler
+AddDepsBasedOnMpiCompiler
 prepend-path PATH $app_dir/bin
