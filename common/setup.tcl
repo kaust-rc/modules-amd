@@ -152,7 +152,30 @@ proc AddDeps { csv_list } {
     }
 }
 
+
+proc is_cluster { cluster_name } {
+  if { $::env(KAUST_CLUSTER)==$cluster_name} {
+	#puts stderr "True"
+	return 1
+  } else {
+	#puts stderr "False"
+	return 0
+  }
+}
+
+
+
+
 proc AddDepsBasedOnCompiler {} {
+    # Load compiler based on module build
+    set module_to_load [string map {- /} $::module_build]
+
+    AddDeps "$module_to_load"
+}
+
+
+
+proc AddDepsBasedOnMpiCompiler {} {
     # Load compiler based on module build
     # Find last dash in the string
     set last_dash_index [expr [string last - $::module_build] - 1]

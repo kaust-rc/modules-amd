@@ -1,0 +1,17 @@
+#%Module 1.0 -*- tcl -*-
+
+# Source common KAUST setup
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralAppSetup
+
+
+# Specific setup goes here, license files, path setup, etc
+prepend-path  PATH             $app_dir/bin
+prepend-path  LIBRARY_PATH     $app_dir/lib
+prepend-path  LD_LIBRARY_PATH  $app_dir/lib
+prepend-path  LD_RUN_PATH      $app_dir/lib
+prepend-path  LD_LIBRARY_PATH   $app_dir/libexec
+prepend-path  LIBRARY_PATH      $app_dir/libexec
+prepend-path  LD_RUN_PATH       $app_dir/libexec
+setenv        ATK_DIR          $app_dir
+setenv        QUANTUM_LICENSE_PATH          6200@WTHFLXSR02.KAUST.EDU.SA
