@@ -4,7 +4,7 @@
 source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 GeneralAppSetup
 
-AddDepsBasedOnCompiler
+AddDepsBasedOnMpiCompiler
 
 # Specific setup goes here, license files, path setup, etc
 prepend-path  PATH             $app_dir
