@@ -38,11 +38,13 @@ if [expr { $version == 17.0 }] {
     prepend-path PATH $app_dir/Electromagnetic/admin
     prepend-path PATH $app_dir/Electromagnetic/AnsysEM$version/Linux64
 }
+
 # The following directory available only for version 17.2
 if [expr { $version == 17.2 }] {
     #This is the path for Chemkin Pro
     prepend-path PATH  $versionDir/reaction/chemkinpro.linuxx8664/bin
     setenv USE_NEWER_LIBSTDCXX true
 }
+
 #Fix for the IBM MPI error
 unsetenv SLURM_GTIDS
