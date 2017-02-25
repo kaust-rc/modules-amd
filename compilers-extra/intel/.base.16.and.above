@@ -4,8 +4,6 @@ source $env(KAUST_MODULES_ROOT)/common/setup.tcl
 # We have to use a different name than INTEL_ROOT otherwise we interfere with Intel's binaries
 GeneralAppSetup ${::version} KAUST_INTEL_ROOT
 
-conflict intel
-
 set intelhome $app_dir/compilers_and_libraries/linux
 set intelarch intel64
 
@@ -51,8 +49,9 @@ prepend-path PATH $intelhome/vtune_amplifier_xe/bin64
 setenv VTUNE_AMPLIFIER_XE_2016_DIR $intelhome/vtune_amplifier_xe
 
 # Inspector
-prepend-path PATH $intelhome/inspector_xe/bin64
-setenv INSPECTOR_${::version}_DIR $intelhome/inspector_xe
+set inspectorhome $intelhome/inspector_xe
+prepend-path PATH $inspectorhome/bin64
+setenv INSPECTOR_${::version}_DIR $inspectorhome
 
 # License
 setenv INTEL_LICENSE_FILE [file dirname $app_dir]/licenses
