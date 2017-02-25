@@ -49,7 +49,7 @@ prepend-path PATH $intelhome/vtune_amplifier_xe/bin64
 setenv VTUNE_AMPLIFIER_XE_2016_DIR $intelhome/vtune_amplifier_xe
 
 # Inspector
-set inspectorhome $intelhome/inspector_xe
+set inspectorhome $app_dir/inspector_xe
 prepend-path PATH $inspectorhome/bin64
 setenv INSPECTOR_${::version}_DIR $inspectorhome
 
