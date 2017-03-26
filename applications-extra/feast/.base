@@ -1,0 +1,13 @@
+#%Module 1.0 -*- tcl -*-
+
+# Source common KAUST setup
+source $env(KAUST_MODULES_ROOT)/common/setup.tcl
+GeneralAppSetup
+
+
+# Specific setup goes here, license files, path setup, etc
+prepend-path  LIBRARY_PATH     $app_dir/lib/x64
+prepend-path  LD_LIBRARY_PATH  $app_dir/lib/x64
+prepend-path  LD_RUN_PATH      $app_dir/lib/x64
+prepend-path  CPATH            $app_dir/include
+setenv        FEASTROOT          $app_dir
