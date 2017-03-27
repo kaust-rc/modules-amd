@@ -6,7 +6,6 @@ GeneralAppSetup
 
 
 # Specific setup goes here, license files, path setup, etc
-# ##
 prepend-path  LIBRARY_PATH     $app_dir/lib/x64
 prepend-path  LD_LIBRARY_PATH  $app_dir/lib/x64
 prepend-path  LD_RUN_PATH      $app_dir/lib/x64
